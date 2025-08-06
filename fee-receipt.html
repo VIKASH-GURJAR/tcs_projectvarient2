@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>View Exam Result</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#f3e9ff] min-h-screen">
+
+  <!-- Header -->
+  <div class="flex items-center bg-gradient-to-r from-[#ff3a4a] to-[#ff1f3a] px-4 py-3">
+    <button aria-label="Back" class="text-white text-3xl pr-4" onclick="location.href='home.html'">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <h1 class="text-white text-lg font-normal">View Exam Result</h1>
+  </div>
+
+  <!-- Form -->
+  <form class="p-4 space-y-6">
+    <div>
+      <label for="batch" class="block text-gray-800 text-lg font-normal mb-1">
+        Batch<span class="text-red-600">*</span>
+      </label>
+      <select
+        id="batch"
+        name="batch"
+        class="w-full rounded-md border border-gray-300 text-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+      >
+        <option>FCE2022-2026 B. Tech. (CE)_PUNo Shift</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="session" class="block text-gray-800 text-lg font-normal mb-1">
+        Session<span class="text-red-600">*</span>
+      </label>
+      <select
+        id="session"
+        name="session"
+        class="w-full rounded-md border border-gray-300 text-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+      >
+        <option>Semester 1</option>
+        <option>Semester 2</option>
+        <option>Semester 3</option>
+        <option>Semester 4</option>
+        <option>Semester 5</option>
+        <option>Semester 6</option>
+        <option>Semester 7</option>
+      </select>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full bg-[#2ecc40] text-white text-lg font-normal py-3 rounded-md"
+    >
+      Search
+    </button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        .sidebar {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar-open {
+            transform: translateX(0);
+        }
+        .main-content {
+            transition: transform 0.3s ease-in-out;
+        }
+        .main-content-open {
+            transform: translateX(16rem); /* Width of the sidebar */
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 40;
+        }
+        .overlay-open {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="bg-gradient-to-r from-orange-500 to-pink-500 p-6 text-white border-b-4 border-white">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <i class="fas fa-bars text-2xl cursor-pointer" id="hamburger"></i>
+                <div class="flex items-center ml-4">
+                    <img alt="User avatar" class="rounded-full w-12 h-12" height="50" src="https://g21.tcsion.com/mION/model/ng/assets/images/default_profile.gif" width="50"/>
+                    <div class="ml-2">
+                        <p class="text-lg">Welcome</p>
+                        <p class="text-sm">Vikash</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative flex flex-col items-center mt-4">
+            <div class="bg-white text-gray-800 rounded-full px-4 py-2 flex items-center justify-center w-full">
+                <span>FYA</span>
+                 <!-- <i class="fas fa-arrow-right mx-2"></i>-->
+                <span class="text-red-500"></span>
+            </div>
+             <!-- <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-red-500 rounded-full p-2 w-10 h-10 flex items-center justify-center">
+                <i class="fas fa-bell text-xl"></i>
+            </div>-->
+        </div>
+    </div>
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="sidebar bg-gray-900 text-white w-64 h-full fixed z-50 top-0 p-2" id="sidebar">
+            <div class="flex items-center mb-6 mt-6 ml-2">
+                <img alt="User profile picture" class="rounded-full w-12 h-12" height="50" src="red.png" width="50"/>
+                <div class="ml-4">
+                    <div class="text-lg font-semibold">Vikash</div>
+                    <div class="text-sm text-gray-400" id="last-login">Last Login: </div>
+                </div>
+            </div>
+            <ul class="ml-2">
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-star mr-3"></i>
+                    <a href="my-favorites.html" class="hover:text-gray-400">My Favorites</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-bell mr-3"></i>
+                    <a href="notifications.html" class="hover:text-gray-400">Notifications</a>
+                    <span class="ml-2 bg-yellow-500 text-black rounded-full px-2">0</span>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-comments mr-3"></i>
+                    <a href="live-chat.html" class="hover:text-gray-400">Live Chat</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-comment-dots mr-3"></i>
+                    <a href="cross-talk.html" class="hover:text-gray-400">Cross Talk</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-th-large mr-3"></i>
+                    <a href="consent-dashboard.html" class="hover:text-gray-400">Consent Dashboard</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-file-alt mr-3"></i>
+                    <a href="privacy-notice.html" class="hover:text-gray-400">Privacy Notice</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-broom mr-3"></i>
+                    <a href="clear-cache.html" class="hover:text-gray-400">Clear Cache</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-sync-alt mr-3"></i>
+                    <a href="version-upgrade.html" class="hover:text-gray-400">Version Upgrade</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-palette mr-3"></i>
+                    <a href="change-theme.html" class="hover:text-gray-400">Change Theme</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-pen mr-3"></i>
+                    <a href="change-template.html" class="hover:text-gray-400">Change Template</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-globe mr-3"></i>
+                    <a href="change-language.html" class="hover:text-gray-400">Change Language</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-power-off mr-3"></i>
+                    <a href="logout.html" class="hover:text-gray-400">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Main Content -->
+        <div class="main-content flex-1 p-4" id="main-content">
+            <div class="grid grid-cols-2 gap-4 p-4">
+                <div class="flex flex-col items-center">
+                    <a href="list-of-holidays.html" class="flex flex-col items-center">
+                        
+                        <img alt="List of Holidays icon" class="w-16 h-16"style="width: 5rem; height: 5rem;" height="100" src="https://g21.tcsion.com/mION/images/usecase/1/Listofholidays.svg" width="100"/>
+                        <p class="text-center text-blue-700 mt-2" style="color: #3f779c; font-weight: 500;">List Of Holidays</p>
+
+
+                    </a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <a href="check-time-table.html" class="flex flex-col items-center">
+                        <img alt="Check Time Table icon" class="w-16 h-16" style="width: 5rem; height: 5rem;" height="100"height="100" src="https://g21.tcsion.com/mION/images/usecase/1/Timetable.svg" width="100"/>
+                        <p class="text-center text-blue-700 mt-2" style="color: #3f779c; font-weight: 500;">Check Time Table</p>
+
+                    </a>
+                </div>
+                <div class="col-span-2 flex justify-center">
+                    <div class="flex flex-col items-center">
+                        <a href="campus-fee.html" class="flex flex-col items-center">
+                            <img alt="Campus Fee icon" class="w-16 h-16" style="width: 5rem; height: 5rem;" height="100"height="100" src="https://g21.tcsion.com/mION/images/usecase/1/MyAssetWorklist.svg" width="100"/>
+                            <p class="text-center text-blue-700 mt-2" style="color: #3f779c; font-weight: 500;">Campus Fee</p>
+
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <a href="feeslip.html" class="flex flex-col items-center">
+                        <img alt="View Exam Result icon" class="w-16 h-16"style="width: 5rem; height: 5rem;" height="100" height="100" src="https://g21.tcsion.com/mION/images/usecase/1/MyAssetWorklist.svg" width="100"/>
+                        <p class="text-center text-blue-700 mt-2" style="color: #3f779c; font-weight: 500;">Fee Receipt</p>
+
+                    </a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <a href="fee-receipt.html" class="flex flex-col items-center">
+                        <img alt="Fee Receipt icon" class="w-16 h-16" style="width: 5rem; height: 5rem;" height="100"height="100" src="https://g21.tcsion.com/mION/images/usecase/1/Grade_1.svg" width="100"/>
+                        <p class="text-center text-blue-700 mt-2" style="color: #3f779c; font-weight: 500;">Veiw Exam Result</p>
+
+                    </a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <a href="my-hostel-request.html" class="flex flex-col items-center">
+                        <img alt="My Hostel Request icon" class="w-16 h-16" style="width: 5rem; height: 5rem;" height="100"height="100" src="https://g21.tcsion.com/mION/images/usecase/1/MyHostelRequest.svg" width="100"/>
+                        <p class="text-center text-blue-700 mt-2" style="color: #3f779c; font-weight: 500;">My Hostel Request</p>
+
+                    </a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <a href="my-transport-request.html" class="flex flex-col items-center">
+                        <img alt="My Transport Request icon" class="w-16 h-16" style="width: 5rem; height: 5rem;" height="100"height="100" src="https://g21.tcsion.com/mION/images/usecase/1/Transport(2).svg" width="100"/>
+                        <p class="text-center text-blue-700 mt-2" style="color: #3f779c; font-weight: 500;">My Transport Request</p>
+
+                    </a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <a href="student-apply-leave.html" class="flex flex-col items-center">
+                        <img alt="Student Apply Leave icon" class="w-16 h-16"style="width: 5rem; height: 5rem;" height="100" height="100" src="https://g21.tcsion.com/mION/images/usecase/1/StudentApplyView.svg" width="100"/>
+                        <p class="text-center text-blue-700 mt-2" style="color: #3f779c; font-weight: 500;">Student Apply Leave</p>
+
+                    </a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <a href="view-download-letters.html" class="flex flex-col items-center">
+                        <img alt="View and Download Letters icon" class="w-16 h-16"style="width: 5rem; height: 5rem;" height="100" height="100" src="https://g21.tcsion.com/mION/images/usecase/1/DownloadLetters.svg" width="100"/>
+                        <p class="text-center text-blue-700 mt-2" style="color: #3f779c; font-weight: 500;">Veiw and Download Letters</p>
+
+                    </a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <a href="search.html" class="flex flex-col items-center">
+                        <img alt="Search icon" class="w-16 h-16"style="width: 5rem; height: 5rem;" height="100" height="100" src="https://g21.tcsion.com/mION/images/usecase/1/Search.svg" width="100"/>
+                        <p class="text-center text-blue-700 mt-2" style="color: #3f779c; font-weight: 500;">Search</p>
+
+                    </a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <a href="feedback.html" class="flex flex-col items-center">
+                        <img alt="Feedback icon" class="w-16 h-16" height="100" style="width: rem; height: 5rem;" height="100"src="https://g21.tcsion.com/mION/images/usecase/1/Feedback.svg" width="100"/>
+                        <p class="text-center text-blue-700 mt-2" style="color: #3f779c; font-weight: 500;">Feedback</p>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('main-content');
+        const overlay = document.getElementById('overlay');
+
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('sidebar-open');
+            mainContent.classList.toggle('main-content-open');
+            overlay.classList.toggle('overlay-open');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('sidebar-open');
+            mainContent.classList.remove('main-content-open');
+            overlay.classList.remove('overlay-open');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!sidebar.contains(event.target) && !hamburger.contains(event.target)) {
+                sidebar.classList.remove('sidebar-open');
+                mainContent.classList.remove('main-content-open');
+                overlay.classList.remove('overlay-open');
+            }
+        });
+
+        // Set current date and time
+        const lastLoginElement = document.getElementById('last-login');
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleString();
+        lastLoginElement.textContent += formattedDate;
+    </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Search Page with Modal and Back Arrow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#f3eaff] min-h-screen relative">
+
+  <!-- Header -->
+  <header class="flex items-center bg-gradient-to-r from-[#ff4b4b] to-[#ef2f4f] px-4 py-3">
+    <a href="home.html" aria-label="Back" class="text-white text-3xl leading-none pr-4">
+      <i class="fas fa-arrow-left"></i>
+    </a>
+    <h1 class="text-white text-lg font-normal">Search</h1>
+  </header>
+
+  <!-- Form -->
+  <main class="p-4">
+    <form action="feedback.html" method="GET" class="space-y-4" onsubmit="return false;">
+      <label class="block text-gray-900 text-lg font-normal" for="searchField">
+        Search Field<span class="text-red-600">*</span>
+      </label>
+      <div>
+        <input
+          id="searchFieldInput"
+          name="searchField"
+          type="text"
+          readonly
+          value="Student"
+          class="w-full rounded-md border border-gray-300 text-gray-900 text-lg px-4 py-2 bg-white cursor-pointer"
+          onclick="openModal()"
+          aria-haspopup="listbox"
+          aria-expanded="false"
+          aria-labelledby="searchFieldLabel"
+        />
+      </div>
+
+      <label class="block text-gray-900 text-lg font-normal" for="textInput">
+        Text
+      </label>
+      <div class="relative">
+        <span class="absolute inset-y-0 left-3 flex items-center text-gray-400 text-lg">
+          <i class="fas fa-search"></i>
+        </span>
+        <input
+          id="textInput"
+          name="keyword"
+          type="text"
+          placeholder="Enter Keyword"
+          class="w-full rounded-md border border-gray-300 text-gray-500 text-lg pl-10 pr-4 py-2"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-[#3ac54a] text-white text-lg font-normal rounded-md py-3"
+        onclick="submitForm()"
+      >
+        Search
+      </button>
+    </form>
+  </main>
+
+  <!-- Modal backdrop -->
+  <div id="modalBackdrop" class="fixed inset-0 bg-black bg-opacity-40 hidden z-40"></div>
+
+  <!-- Modal -->
+  <div
+    id="modal"
+    class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-300 rounded-md shadow-lg w-11/12 max-w-xs p-4 z-50 hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+    <h2 id="modalTitle" class="text-gray-900 text-lg font-semibold mb-3">Select Search Field</h2>
+    <ul role="listbox" tabindex="0" aria-activedescendant="option-student" class="space-y-2">
+      <li
+        id="option-student"
+        role="option"
+        tabindex="0"
+        class="cursor-pointer rounded-md bg-white px-3 py-2 text-gray-900 hover:bg-gray-200"
+        onclick="selectOption('Student')"
+        onkeydown="if(event.key==='Enter' || event.key===' ') selectOption('Student')"
+      >
+        Student
+      </li>
+      <li
+        id="option-faculty"
+        role="option"
+        tabindex="0"
+        class="cursor-pointer rounded-md bg-white px-3 py-2 text-gray-900 hover:bg-gray-200"
+        onclick="selectOption('Faculty')"
+        onkeydown="if(event.key==='Enter' || event.key===' ') selectOption('Faculty')"
+      >
+        Faculty
+      </li>
+      <li
+        id="option-catalog"
+        role="option"
+        tabindex="0"
+        class="cursor-pointer rounded-md bg-white px-3 py-2 text-gray-900 hover:bg-gray-200"
+        onclick="selectOption('Catalog')"
+        onkeydown="if(event.key==='Enter' || event.key===' ') selectOption('Catalog')"
+      >
+        Catalog
+      </li>
+    </ul>
+    <button
+      class="mt-4 w-full bg-red-500 text-white rounded-md py-2"
+      onclick="closeModal()"
+      aria-label="Close modal"
+    >
+      Cancel
+    </button>
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const backdrop = document.getElementById('modalBackdrop');
+    const searchFieldInput = document.getElementById('searchFieldInput');
+
+    function openModal() {
+      modal.classList.remove('hidden');
+      backdrop.classList.remove('hidden');
+      modal.querySelector('ul').focus();
+      searchFieldInput.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      backdrop.classList.add('hidden');
+      searchFieldInput.setAttribute('aria-expanded', 'false');
+      searchFieldInput.focus();
+    }
+
+    function selectOption(value) {
+      searchFieldInput.value = value;
+      closeModal();
+    }
+
+    // Close modal on backdrop click
+    backdrop.addEventListener('click', closeModal);
+
+    // Submit form function (for demonstration, redirects with query params)
+    function submitForm() {
+      const searchField = searchFieldInput.value;
+      const keyword = document.getElementById('textInput').value;
+      // Redirect to search-results.html with query parameters
+      const url = new URL('search-results.html', window.location.origin);
+      url.searchParams.set('searchField', searchField);
+      url.searchParams.set('keyword', keyword);
+      window.location.href = url.toString();
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>

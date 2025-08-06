@@ -1,0 +1,294 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        .sidebar {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar-open {
+            transform: translateX(0);
+        }
+        .main-content {
+            transition: transform 0.3s ease-in-out;
+        }
+        .main-content-open {
+            transform: translateX(16rem); /* Width of the sidebar */
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 40;
+        }
+        .overlay-open {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="bg-gradient-to-r from-orange-500 to-pink-500 p-6 text-white border-b-4 border-white">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <i class="fas fa-bars text-2xl cursor-pointer" id="hamburger"></i>
+                <div class="flex items-center ml-4">
+                    <img alt="User avatar" class="rounded-full w-12 h-12" height="50" src="https://g21.tcsion.com/mION/model/ng/assets/images/default_profile.gif" width="50"/>
+                    <div class="ml-2">
+                        <p class="text-lg">Welcome</p>
+                        <p class="text-sm">Vikash</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="relative flex flex-col items-center mt-4"> -->
+            <div class="bg-white text-gray-800 rounded-full px-4 py-2 flex items-center justify-center w-full">
+                <span>FYA</span>
+                <!-- <i class="fas fa-arrow-right mx-2"></i> -->
+                <!-- <span class="text-red-500">0</span> -->
+            </div>
+            <!-- <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-red-500 rounded-full p-2 w-10 h-10 flex items-center justify-center">
+                <i class="fas fa-bell text-xl"></i>
+            </div> -->
+        </div>
+    </div>
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="sidebar bg-gray-900 text-white w-64 h-full fixed z-50 top-0 p-2" id="sidebar">
+            <div class="flex items-center mb-6 mt-6 ml-2">
+                <img alt="User profile picture" class="rounded-full w-12 h-12" height="50" src="img/red.png" width="50"/>
+                <div class="ml-4">
+                    <div class="text-lg font-semibold">Vikash</div>
+                    <div class="text-sm text-gray-400" id="last-login">Last Login: </div>
+                </div>
+            </div>
+            <ul class="ml-2">
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-star mr-3"></i>
+                    <a href="my-favorites.html" class="hover:text-gray-400">My Favorites</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-bell mr-3"></i>
+                    <a href="notifications.html" class="hover:text-gray-400">Notifications</a>
+                    <span class="ml-2 bg-yellow-500 text-black rounded-full px-2">0</span>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-comments mr-3"></i>
+                    <a href="live-chat.html" class="hover:text-gray-400">Live Chat</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-comment-dots mr-3"></i>
+                    <a href="cross-talk.html" class="hover:text-gray-400">Cross Talk</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-th-large mr-3"></i>
+                    <a href="consent-dashboard.html" class="hover:text-gray-400">Consent Dashboard</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-file-alt mr-3"></i>
+                    <a href="privacy-notice.html" class="hover:text-gray-400">Privacy Notice</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-broom mr-3"></i>
+                    <a href="clear-cache.html" class="hover:text-gray-400">Clear Cache</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-sync-alt mr-3"></i>
+                    <a href="version-upgrade.html" class="hover:text-gray-400">Version Upgrade</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-palette mr-3"></i>
+                    <a href="change-theme.html" class="hover:text-gray-400">Change Theme</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-pen mr-3"></i>
+                    <a href="change-template.html" class="hover:text-gray-400">Change Template</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-globe mr-3"></i>
+                    <a href="change-language.html" class="hover:text-gray-400">Change Language</a>
+                </li>
+                <li class="mb-4 flex items-center">
+                    <i class="fas fa-power-off mr-3"></i>
+                    <a href="logout.html" class="hover:text-gray-400">Logout</a>
+                </li>
+            </ul>
+        </div>
+     iON Digital Learning
+    </div>
+    <div class="flex mt-2">
+     <div class="w-1/2 text-center py-2 border-b-2 border-gray-300">
+      My Courses
+     </div>
+     <div class="w-1/2 text-center py-2 border-b-2 border-gray-300">
+      My Communities
+     </div>
+    </div>
+   </div>
+   <div class="bg-white p-4 rounded-lg shadow-md mb-4 flex items-center">
+    <img alt="Timetable icon" class="w-12 h-12" height="50" src="https://storage.googleapis.com/a1aa/image/WBy4_roKHrK8igWM2h1rhdhrcWpnGntkBEBWR5uMsg0.jpg" width="50">
+     <div class="ml-4 text-lg">
+      My Timetable
+     </div>
+    </img>
+   </div>
+   <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+    <div class="text-lg">
+     View Periodwise Attendance
+    </div>
+    <img alt="Attendance icon" class="w-full mt-2" src="https://storage.googleapis.com/a1aa/image/910HncMnzi_hJeD-8EI6C8NS29-Uri2iuuS28dPQJng.jpg"/>
+    <div class="flex mt-2">
+     <div class="w-1/2 text-center py-2 border-b-2 border-gray-300">
+      Summary
+     </div>
+     <div class="w-1/2 text-center py-2 border-b-2 border-gray-300">
+      Detail
+     </div>
+    </div>
+   </div>
+   <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+    <div class="text-lg">
+     Results
+    </div>
+    <img alt="Results icon" class="w-full mt-2" height="100" src="https://storage.googleapis.com/a1aa/image/1v30rWkm53p4ksmYAQrtmxgFJSHZf2235azFKEZCzY0.jpg" width="300"/>
+    <div class="flex mt-2">
+     <div class="w-1/2 text-center py-2 border-b-2 border-gray-300">
+      View Result
+     </div>
+     <div class="w-1/2 text-center py-2 border-b-2 border-gray-300">
+      Report Card
+     </div>
+    </div>
+   </div>
+   <div class="bg-white p-4 rounded-lg shadow-md mb-4 flex items-center">
+    <img alt="Feedback icon" class="w-12 h-12" height="50" src="https://storage.googleapis.com/a1aa/image/kN8iy31V1tnU7FykgxxCxLwFJIVv44lEDrjNvoO3-T0.jpg" width="50"/>
+    <div class="ml-4 text-lg">
+     Submit Feedback
+    </div>
+   </div>
+   <div class="grid grid-cols-2 gap-4 mb-4">
+    <div class="bg-white p-4 rounded-lg shadow-md">
+     <img alt="Student Leave icon" class="w-12 h-12 mx-auto" height="50" src="https://storage.googleapis.com/a1aa/image/qi8RubmxWvJ2SYxsW4bqfLgk3CcAVYCrPpYlignT2w0.jpg" width="50"/>
+     <div class="text-center mt-2">
+      Student Leave
+     </div>
+     <div class="text-center text-blue-500 mt-2">
+      Apply Leave
+     </div>
+     <div class="text-center text-blue-500 mt-1">
+      Leave Requests
+     </div>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md">
+     <img alt="Hostel Leave icon" class="w-12 h-12 mx-auto" height="50" src="https://storage.googleapis.com/a1aa/image/Xad7Ki3noGTzKzgX53NjwKJMeHZm_gs1NSFfg8FhWKQ.jpg" width="50"/>
+     <div class="text-center mt-2">
+      Hostel Leave
+     </div>
+     <div class="text-center text-blue-500 mt-2">
+      Apply Hostel Leave
+     </div>
+     <div class="text-center text-blue-500 mt-1">
+      Hostel Leave Requests
+     </div>
+    </div>
+   </div>
+   <div class="bg-white p-4 rounded-lg shadow-md mb-4 flex items-center">
+    <img alt="Hostel Request icon" class="w-12 h-12" height="50" src="https://storage.googleapis.com/a1aa/image/knBIxTgpbikxagSsqcTrG1OxDGBa1qLoqX27Gzrl6sY.jpg" width="50"/>
+    <div class="ml-4 text-lg">
+     My Hostel Request
+    </div>
+   </div>
+   <div class="grid grid-cols-2 gap-4 mb-4">
+    <div class="bg-white p-4 rounded-lg shadow-md">
+     <img alt="Transport Request icon" class="w-12 h-12 mx-auto" height="50" src="https://storage.googleapis.com/a1aa/image/OEXykYdLKiAnHHWJzrtPdy9Nh5qQZ8GFCnrYST7vsyg.jpg" width="50"/>
+     <div class="text-center mt-2">
+      Transport Request
+     </div>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md">
+     <img alt="Vehicle Tracking icon" class="w-12 h-12 mx-auto" height="50" src="https://storage.googleapis.com/a1aa/image/m7AztJpU5DdOeeVrnKvM2UFyhhcmBanjKZpXoJYwVAQ.jpg" width="50"/>
+     <div class="text-center mt-2">
+      Vehicle Tracking
+     </div>
+    </div>
+   </div>
+   <a href="feeslip.html" style="text-decoration: none; color: inherit;">
+  <div class="bg-white p-4 rounded-lg shadow-md mb-4 flex items-center">
+    <img alt="Fee Receipt icon" class="w-12 h-12" height="50" src="https://storage.googleapis.com/a1aa/image/iwA013vyguCbLhGuNQKDGT2KCV649cIgRmGigDiIGgU.jpg" width="50"/>
+    <div class="ml-4 text-lg">
+      Fee Receipt
+    </div>
+  </div>
+</a>
+
+   <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+    <div class="text-lg">
+     Letter Request
+    </div>
+    <img alt="Letter Request icon" class="w-full mt-2" height="100" src="https://storage.googleapis.com/a1aa/image/MGhwnnvsM9gIh8gubv-5wOjzWXrIKVILJTlDYGZnATA.jpg" width="300"/>
+    <div class="flex mt-2">
+     <div class="w-1/2 text-center py-2 border-b-2 border-gray-300">
+      Request New
+     </div>
+     <div class="w-1/2 text-center py-2 border-b-2 border-gray-300">
+      View/Download
+     </div>
+    </div>
+   </div>
+   <div class="grid grid-cols-2 gap-4 mb-4">
+    <div class="bg-white p-4 rounded-lg shadow-md">
+     <img alt="Reminders icon" class="w-12 h-12 mx-auto" height="50" src="https://storage.googleapis.com/a1aa/image/wIkBYN2k8X_pMf7r68GgOYcm-QR8zIxWkM0Ol7n2QZI.jpg" width="50"/>
+     <div class="text-center mt-2">
+      Reminders
+     </div>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md">
+     <img alt="Communicate icon" class="w-12 h-12 mx-auto" height="50" src="https://storage.googleapis.com/a1aa/image/XxOX4bt01iosyEhdic21IzyE8fDefKN5ZhKnId06YiA.jpg" width="50"/>
+     <div class="text-center mt-2">
+      Communicate
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('main-content');
+    const overlay = document.getElementById('overlay');
+
+    hamburger.addEventListener('click', () => {
+        sidebar.classList.toggle('sidebar-open');
+        mainContent.classList.toggle('main-content-open');
+        overlay.classList.toggle('overlay-open');
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('sidebar-open');
+        mainContent.classList.remove('main-content-open');
+        overlay.classList.remove('overlay-open');
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!sidebar.contains(event.target) && !hamburger.contains(event.target)) {
+            sidebar.classList.remove('sidebar-open');
+            mainContent.classList.remove('main-content-open');
+            overlay.classList.remove('overlay-open');
+        }
+    });
+
+    // Set current date and time
+    const lastLoginElement = document.getElementById('last-login');
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleString();
+    lastLoginElement.textContent += formattedDate;
+</script>
+ </body>
+</html>

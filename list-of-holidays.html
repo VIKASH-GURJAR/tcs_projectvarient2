@@ -1,0 +1,147 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>List Of Holidays</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    /* Custom scrollbar for horizontal scroll on calendar */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-white font-sans">
+  <!-- Header -->
+  <header class="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-orange-500 to-pink-600 text-white text-lg font-normal">
+    <a href="home.html" aria-label="Go to home page">
+      <i class="fas fa-chevron-left cursor-pointer"></i>
+    </a>
+    <h1 class="leading-none">List Of Holidays</h1>
+  </header>
+
+  <!-- Main container -->
+  <main class="mx-4 mt-4 rounded-t-xl bg-white shadow-md">
+    <!-- Month navigation and title -->
+    <section class="flex items-center gap-2 px-4 py-3 text-gray-900 font-semibold text-xl select-none">
+      <i class="fas fa-chevron-left text-sky-600 cursor-pointer"></i>
+      <span>Aug 2025</span>
+      <i class="fas fa-chevron-right text-sky-600 cursor-pointer"></i>
+    </section>
+
+    <!-- Legend and toggle -->
+    <section class="flex items-center gap-4 px-4 pb-3">
+      <div class="flex items-center gap-1">
+        <div class="w-5 h-5 rounded bg-purple-700 flex items-center justify-center text-white text-xs font-bold">
+          <i class="fas fa-check"></i>
+        </div>
+        <span class="font-semibold text-gray-900">Events</span>
+      </div>
+      <div class="flex items-center gap-1">
+        <div class="w-5 h-5 rounded bg-green-500 flex items-center justify-center text-white text-xs font-bold">
+          <i class="fas fa-check"></i>
+        </div>
+        <span class="font-semibold text-gray-900">Exam Events</span>
+      </div>
+      <div class="flex items-center gap-1">
+        <div class="w-5 h-5 rounded bg-pink-400 flex items-center justify-center text-white text-xs font-bold">
+          <i class="fas fa-check"></i>
+        </div>
+        <span class="font-semibold text-gray-900">Holidays</span>
+      </div>
+      <button
+        aria-label="Toggle calendar view"
+        class="ml-auto flex items-center border border-sky-400 rounded-full overflow-hidden"
+      >
+        <button aria-label="Calendar icon" class="px-3 py-1 bg-white border-r border-sky-400">
+          <i class="far fa-calendar-alt text-sky-400"></i>
+        </button>
+        <button aria-label="List icon" class="px-3 py-1 bg-sky-400 text-white">
+          <i class="fas fa-bars"></i>
+        </button>
+      </button>
+    </section>
+
+    <!-- Calendar -->
+    <section class="overflow-x-auto scrollbar-hide border border-gray-300 rounded-b-xl">
+      <table class="w-full border-collapse text-center text-gray-700 text-sm">
+        <thead class="border-b border-gray-300">
+          <tr>
+            <th class="py-3 px-2 font-normal">M</th>
+            <th class="py-3 px-2 font-normal">T</th>
+            <th class="py-3 px-2 font-normal">W</th>
+            <th class="py-3 px-2 font-normal">T</th>
+            <th class="py-3 px-2 font-normal">F</th>
+            <th class="py-3 px-2 font-normal">S</th>
+            <th class="py-3 px-2 font-normal">S</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-gray-300">
+            <td class="border border-gray-300 py-6 px-2">28</td>
+            <td class="border border-gray-300 py-6 px-2">29</td>
+            <td class="border border-gray-300 py-6 px-2">30</td>
+            <td class="border border-gray-300 py-6 px-2">31</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">1</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">2</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">3</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 py-6 px-2 text-black">4</td>
+            <td class="border border-gray-300 py-6 px-2 text-black outline outline-2 outline-sky-500">5</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">6</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">7</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">8</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">9</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">10</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 py-6 px-2 text-black">11</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">12</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">13</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">14</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">15</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">16</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">17</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 py-6 px-2 text-black">18</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">19</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">20</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">21</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">22</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">23</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">24</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 py-6 px-2 text-black">25</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">26</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">27</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">28</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">29</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">30</td>
+            <td class="border border-gray-300 py-6 px-2 text-black">31</td>
+          </tr>
+          <tr class="text-gray-300">
+            <td class="border border-gray-300 py-6 px-2">1</td>
+            <td class="border border-gray-300 py-6 px-2">2</td>
+            <td class="border border-gray-300 py-6 px-2">3</td>
+            <td class="border border-gray-300 py-6 px-2">4</td>
+            <td class="border border-gray-300 py-6 px-2">5</td>
+            <td class="border border-gray-300 py-6 px-2">6</td>
+            <td class="border border-gray-300 py-6 px-2">7</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Apply Leave</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+</head>
+<body class="bg-white font-sans">
+  <!-- Header -->
+  <header class="flex items-center px-4 py-3 bg-gradient-to-r from-orange-500 to-pink-600 text-white text-lg font-normal">
+    <button aria-label="Back" class="mr-3" id="back-button" type="button">
+      <i class="fas fa-arrow-left" style=""></i>
+    </button>
+    <h1 class="leading-none">Student Apply Leave</h1>
+  </header>
+
+  <main class="px-4 pt-4 pb-20">
+    <!-- Leave Type -->
+    <section class="mb-6">
+      <p class="text-base text-gray-900 mb-2">Leave Type</p>
+      <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-tr from-teal-400 to-cyan-500 text-white font-semibold text-lg select-none">
+        BA
+      </div>
+    </section>
+
+    <!-- Dates -->
+    <section class="flex border-t border-b border-gray-300 mb-6">
+      <div class="flex-1 border-r border-gray-300 py-4 px-3">
+        <p class="text-orange-500 text-sm font-semibold mb-1">START DATE</p>
+        <div class="flex items-baseline space-x-2">
+          <span class="text-4xl font-extrabold text-gray-900 leading-none">5</span>
+          <div>
+            <p class="text-base font-normal text-gray-900 leading-none">Aug 2025</p>
+            <p class="text-sm text-gray-400 leading-none">Tuesday</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex-1 py-4 px-3">
+        <p class="text-orange-500 text-sm font-semibold mb-1">END DATE</p>
+        <div class="flex items-baseline space-x-2 end-date" style="">
+          <span class="text-4xl font-extrabold text-gray-900 leading-none" id="end-day">5</span>
+          <div>
+            <p class="text-base font-normal text-gray-900 leading-none" id="end-month-year">Aug 2025</p>
+            <p class="text-sm text-gray-400 leading-none" id="end-weekday">Tuesday</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Time Based Leave -->
+    <section class="flex items-center justify-between bg-gray-100 px-4 py-3 mb-6 rounded-sm">
+      <p class="text-base text-gray-900">Time Based Leave</p>
+      <button
+        aria-pressed="false"
+        type="button"
+        class="relative inline-flex items-center h-8 rounded-full w-16 bg-gradient-to-r from-orange-500 to-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
+      >
+        <span
+          class="sr-only"
+          >Toggle Time Based Leave</span
+        >
+        <span
+          aria-hidden="true"
+          class="translate-x-1 inline-block w-6 h-6 transform bg-white rounded-full transition-transform"
+        ></span>
+        <span
+          class="absolute right-2 text-white text-xs font-semibold select-none"
+          >NO</span
+        >
+      </button>
+    </section>
+
+    <!-- Upload Documents -->
+    <section class="mb-6">
+      <p class="text-base text-gray-900 mb-3">Upload Documents</p>
+      <label
+        for="file-upload"
+        class="flex items-center border-2 border-dashed border-gray-300 rounded-md p-4 cursor-pointer"
+      >
+        <div
+          class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-teal-400 to-cyan-500 text-white mr-4"
+        >
+          <i class="fas fa-upload text-2xl"></i>
+        </div>
+        <div class="text-gray-900 text-base">
+          Drag File Here OR
+          <span
+            class="ml-2 inline-block bg-blue-600 text-white px-3 py-1 rounded select-none"
+            >Browse</span
+          >
+        </div>
+        <input id="file-upload" type="file" class="hidden" />
+      </label>
+    </section>
+
+    <!-- Comments -->
+    <section>
+      <label for="comments" class="block text-base text-gray-900 mb-2"
+        >Comments <span class="text-red-600">*</span></label
+      >
+      <textarea
+        id="comments"
+        rows="5"
+        class="w-full border border-gray-300 rounded-md p-2 text-gray-900 text-base resize-none focus:outline-none focus:ring-2 focus:ring-pink-500"
+      ></textarea>
+    </section>
+  </main>
+
+  <!-- Footer Buttons -->
+  <footer class="fixed bottom-0 left-0 right-0 flex text-white text-lg font-normal">
+    <button
+      type="button"
+      class="flex-1 flex items-center justify-center space-x-2 bg-pink-500 py-4"
+    >
+      <i class="fas fa-times text-xl"></i>
+      <span>Cancel</span>
+    </button>
+    <button
+      type="button"
+      class="flex-1 flex items-center justify-center space-x-2 bg-teal-400 py-4"
+    >
+      <i class="fas fa-check text-xl"></i>
+      <span>Apply</span>
+    </button>
+  </footer>
+
+  <script>
+    function updateEndDate() {
+      const now = new Date();
+
+      const day = now.getDate();
+      const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      const month = monthNames[now.getMonth()];
+      const year = now.getFullYear();
+
+      const weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const weekday = weekdayNames[now.getDay()];
+
+      document.getElementById("end-day").textContent = day;
+      document.getElementById("end-month-year").textContent = `${month} ${year}`;
+      document.getElementById("end-weekday").textContent = weekday;
+    }
+
+    updateEndDate();
+
+    // Redirect on back arrow click
+    document.getElementById("back-button").addEventListener("click", () => {
+      window.location.href = "home.html";
+    });
+  </script>
+</body>
+</html>

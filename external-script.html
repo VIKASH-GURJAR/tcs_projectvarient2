@@ -1,0 +1,26 @@
+<script>
+    window.onload = () => {
+        const downloadBtn = parent.document.getElementById('download-btn');
+        const actionOpts = parent.document.querySelector('.takeActionOptsDv');
+        const viewHtmlBtn = parent.document.getElementById('viewhtml');
+        const printPdfBtn = parent.document.getElementById('printpdf');
+
+        // Toggle popup actions on Download button click
+        downloadBtn.addEventListener('click', () => {
+            actionOpts.style.display = actionOpts.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // View HTML button - Open PDF in new tab
+        viewHtmlBtn.addEventListener('click', () => {
+            window.open('your-pdf-file.pdf', '_blank');
+        });
+
+        // Print/Save PDF XPS button - Download PDF
+        printPdfBtn.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = 'your-pdf-file.pdf';
+            link.download = 'Downloaded-PDF.pdf';
+            link.click();
+        });
+    };
+</script>
