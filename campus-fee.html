@@ -1,196 +1,346 @@
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   Campus Fee Collector Student
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet"/>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fee Receipt</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
   <style>
-   body {
-      font-family: 'Roboto', sans-serif;
+    /* Custom scrollbar for the container to mimic mobile scroll */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
   </style>
- </head>
- <body class="bg-white text-gray-900">
-  <!-- Top bar -->
-  <header class="flex items-center bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-3">
-   <a href="#back-button" class="flex items-center text-white">
-    <i class="fas fa-arrow-left text-lg" id="back-button" style="">
-    </i>
-   </a>
-   <h1 class="ml-3 text-base truncate">
-    Campus Fee Collector Student ...
-   </h1>
-  </header>
-  <!-- Black header with logo and menu -->
-  <section class="bg-black flex justify-between items-center px-4 py-2">
-   <div class="flex items-center space-x-2">
-    <img alt="TCS iON logo in white on black background" class="h-8 w-auto" height="30" src="https://cdn.tcsion.com/per/g01/pub/1016/iDH/instance/1/template/478/final/image/TCS_iON-logo.png" width="80"/>
-    <span class="text-white text-xs">
-     Fee Collection
-    </span>
-   </div>
-   <div class="text-white text-2xl cursor-pointer select-none">
-    ⋮
-   </div>
-  </section>
-  <!-- Blue user info section -->
-  <section class="bg-[#0D6DB8] px-4 pt-6 pb-4">
-   <div class="flex items-center space-x-4 relative max-w-md">
-    <img alt="Student photo of a young man with glasses wearing white polo shirt" class="rounded-full border-4 border-[#7BAED9] z-10" height="80" src="	https://g21.tcsion.com/cms//Blockfromoutsidegetimage?studentid=1257&orgid=32455" width="80"/>
-    <div class="bg-[#7BAED9] rounded-r-3xl px-6 py-3 flex flex-col text-white max-w-[240px]">
-     <span class="font-semibold text-sm leading-tight">
-      VIKASH GURJAR
-     </span>
-     <span class="text-xs opacity-80 leading-tight">
-      Roll No.2022BCEX1237
-     </span>
-     <span class="text-xs opacity-80 leading-tight">
-      Reg No.2022/12295
-     </span>
-    </div>
-   </div>
-   <div class="text-white text-xs mt-1 max-w-md ml-[92px]">
-    User Details | View Transactions |
-   </div>
-   <div class="flex flex-wrap text-white text-xs mt-4 max-w-md">
-    <div class="w-1/2 pr-2 mb-3">
-     <div class="opacity-80">
-      Site
-     </div>
-     <div class="leading-snug">
-      FCE-Faculty of Computer Science and Engineering
-     </div>
-    </div>
-    <div class="w-1/2 pl-2 mb-3">
-     <div class="opacity-80">
-      Batch
-     </div>
-     <div class="leading-snug">
-      FCE2022-2026 B. Tech. (CE)_PUNo Shift
-     </div>
-    </div>
-    <div class="w-1/2 pr-2">
-     <div class="opacity-80">
-      Session
-     </div>
-     <div class="font-semibold">
-      Semester 7
-     </div>
-    </div>
-    <div class="w-1/2 pl-2">
-     <div class="opacity-80">
-      Class
-     </div>
-     <div class="font-semibold">
-      E
-     </div>
-    </div>
-   </div>
-  </section>
-  <!-- Fee Type Selection -->
-  <section class="px-4 mt-4 max-w-md">
-   <h2 class="font-semibold text-gray-800 mb-2">
-    Fee Type Selection
-   </h2>
-   <form class="space-y-1 text-gray-700 text-sm">
-    <label class="flex items-center space-x-2">
-     <input checked="" name="feeType" type="radio"/>
-     <span>
-      Fee
-     </span>
-    </label>
-    <label class="flex items-center space-x-2">
-     <input name="feeType" type="radio"/>
-     <span>
-      Fine
-     </span>
-    </label>
-   </form>
-  </section>
-  <!-- Fee Details -->
-  <section class="px-4 mt-6 max-w-md">
-   <h2 class="font-semibold text-gray-800 mb-2">
-    Fee Details
-   </h2>
-   <div class="bg-[#4AB6B1] flex items-center p-4 rounded-md">
-    <img alt="Icon showing a building and stacked coins representing fee" class="w-20 h-20 flex-shrink-0" height="80" src="campusfee.png" width="80"/>
-    <div class="ml-4 text-white">
-     <div class="text-lg font-normal">
-      Academics Fee
-     </div>
-     <div class="text-xl font-semibold mt-1">
-      ₹60094.00
-     </div>
-    </div>
-   </div>
-   <div class="bg-[#4AB6B1] text-white text-xs px-4 py-1 mt-1 rounded-b-md max-w-md">
-    Academics Fee Includes
-   </div>
-   <div class="bg-gray-100 text-[#4AB6B1] text-sm px-4 py-2 mt-1 rounded-md max-w-md">
-    FCE2022-2026 B. Tech. (CE)_PUNo Shift
-   </div>
-  </section>
-  <!-- Transactions -->
-  <section class="bg-[#0D6DB8] mt-6 px-4 py-4 max-w-md">
-   <div class="flex justify-between items-center mb-3">
-    <h3 class="text-white font-normal text-lg">
-     Transactions
-    </h3>
-    <button class="bg-[#0D6DB8] text-white text-xs px-3 py-1 rounded-l-full rounded-r-full border border-white" type="button">
-     View All
-    </button>
-   </div>
-   <ul class="text-white text-xs space-y-1 leading-tight">
-     <li>
-     PU/31-07-25/Online/67712 Date: 31 -07-2025
-    </li>
-    <li>
-     PU/30-07-25/Online/67465 Date: 30 -07-2025
-    </li>
-    <li>
-     PU/02-12-24/Online/38098 Date: 02 -12-2024
-    </li>
-    <li>
-     PU/02-12-24/Online/38097 Date: 02 -12-2024
-    </li>
-    <li>
-     PU/30-09-24/Online/23204 Date: 30 -09-2024
-    </li>
-    <li>
-     PU/13-09-24/ECS/19244 Date: 13 -09-2024
-    </li>
-   </ul>
-  </section>
-  <!-- Contact Information -->
-  <section class="bg-gray-100 text-center py-4 mt-6 max-w-md mx-auto">
-   <h4 class="font-semibold text-gray-700 mb-2">
-    Contact Information
-   </h4>
-   <div class="flex justify-center space-x-12 text-gray-600 text-xl">
-    <i class="fas fa-phone-alt">
-    </i>
-    <i class="fas fa-user-circle">
-    </i>
-    <i class="fas fa-envelope">
-    </i>
-   </div>
-  </section>
-  <!-- Payment summary and button -->
-  <section class="bg-[#1E3A5F] py-4 px-6 max-w-md mx-auto mt-6 rounded-b-md">
-   <div class="bg-[#3B5573] text-white font-semibold text-lg rounded-full py-2 px-6 text-center max-w-md mx-auto">
-    Total: ₹ 60094.00
-   </div>
-   <a href="#back-button" class="block bg-[#3BD14B] text-white text-lg font-normal rounded-md w-full mt-4 py-3 text-center no-underline" role="button">
-    Pay Now
-   </a>
-   <p class="text-white text-center mt-3 text-sm">
-    Your Payment: ₹ 60094.00
-   </p>
-  </section>
- </body>
+</head>
+<body class="bg-[#e1e8eb] font-sans relative">
+  <div id="mainPage" class="max-w-3xl mx-auto min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="flex items-center gap-4 bg-gradient-to-r from-[#f44336] to-[#f63f4f] px-4 py-3">
+      <button aria-label="Back" class="text-white text-2xl leading-none">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <h1 class="text-white text-lg font-normal">Fee Receipt</h1>
+    </header>
+
+    <main class="flex-grow overflow-y-auto scrollbar-hide p-4 space-y-2">
+      <!-- Receipt 1 -->
+      <section class="bg-white rounded-md shadow-sm p-4 -mt-2 relative max-w-full mx-auto">
+        <p class="text-gray-500 text-sm mb-1">Receipt Number</p>
+        <p class="font-semibold text-gray-900 mb-3">PU/30-07-25/Online/67465</p>
+
+        <p class="text-gray-500 text-sm mb-1">Site</p>
+        <p class="font-semibold text-gray-900 mb-4">
+          FCE-Faculty of Computer Science and Engineering
+        </p>
+
+        <div class="bg-[#f5f7f8] rounded-md flex text-center text-gray-600 text-sm font-normal">
+          <div class="flex-1 p-3 border-r border-[#d9dfe2]">
+            <p class="font-semibold text-gray-700 text-base">2025-07-30</p>
+            <p>Payment Date</p>
+          </div>
+          <div class="flex-1 p-3 border-r border-[#d9dfe2]">
+            <p class="font-semibold text-gray-700 text-base">Online</p>
+            <p>Payment Mode</p>
+          </div>
+          <div class="flex-1 p-3">
+            <p class="font-semibold text-[#f68b1e] text-base">56000.00</p>
+            <p>Amount</p>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="mt-2 text-[#1d6ea7] text-sm font-normal flex items-center gap-1"
+          aria-expanded="false"
+        >
+          More <i class="fas fa-chevron-down text-xs"></i>
+        </button>
+
+        <div class="pt-4 flex justify-end bg-[#EFF5F4] relative">
+          <button
+            type="button"
+            class="text-[#4a6f85] font-semibold text-xs border border-[#a4cbd8] rounded-full px-4 py-2 hover:bg-[#eaf5fa] transition"
+            onclick="togglePopup(this)"
+          >
+            Download
+          </button>
+          <!-- Popup -->
+          <div
+            class="absolute bg-white rounded-md shadow-md p-3 flex flex-col z-20 hidden min-w-[140px]"
+            style="top:1rem; right:-0.25rem;"
+          >
+            <button
+              type="button"
+              class="text-gray-700 font-semibold text-sm rounded-t-full px-5 py-1 hover:bg-[#eaf5fa] transition border-b border-gray-300"
+              onclick="viewPdfInApp('https://example.com/sample.pdf')"
+            >
+              View Html
+            </button>
+            <a
+              href="https://example.com/sample.pdf"
+              download="receipt.pdf"
+              class="text-gray-700 font-semibold text-sm rounded-b-full px-5 py-1 hover:bg-[#eaf5fa] transition text-center"
+              onclick="closePopup(this)"
+            >
+              Print/Save PDF XPs
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Receipt 2 -->
+      <section class="bg-white rounded-md shadow-sm p-4 relative max-w-full mx-auto">
+        <p class="text-gray-500 text-sm mb-1">Receipt Number</p>
+        <p class="font-semibold text-gray-900 mb-3">PU/02-12-24/Online/38098</p>
+
+        <p class="text-gray-500 text-sm mb-1">Site</p>
+        <p class="font-semibold text-gray-900 mb-4">
+          FCE-Faculty of Computer Science and Engineering
+        </p>
+
+        <div class="bg-[#f5f7f8] rounded-md flex text-center text-gray-600 text-sm font-normal">
+          <div class="flex-1 p-3 border-r border-[#d9dfe2]">
+            <p class="font-semibold text-gray-700 text-base">2024-12-02</p>
+            <p>Payment Date</p>
+          </div>
+          <div class="flex-1 p-3 border-r border-[#d9dfe2]">
+            <p class="font-semibold text-gray-700 text-base">Online</p>
+            <p>Payment Mode</p>
+          </div>
+          <div class="flex-1 p-3">
+            <p class="font-semibold text-[#f68b1e] text-base">17094.00</p>
+            <p>Amount</p>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="mt-2 text-[#1d6ea7] text-sm font-normal flex items-center gap-1"
+          aria-expanded="false"
+        >
+          More <i class="fas fa-chevron-down text-xs"></i>
+        </button>
+
+        <div class="pt-4 flex justify-end bg-[#EFF5F4] relative">
+          <button
+            type="button"
+            class="text-[#4a6f85] font-semibold text-xs border border-[#a4cbd8] rounded-full px-4 py-2 hover:bg-[#eaf5fa] transition"
+            onclick="togglePopup(this)"
+          >
+            Download
+          </button>
+          <!-- Popup -->
+          <div
+            class="absolute bg-white rounded-md shadow-md p-3 flex flex-col z-20 hidden min-w-[140px]"
+            style="top:1rem; right:-0.25rem;"
+          >
+            <button
+              type="button"
+              class="text-gray-700 font-semibold text-sm rounded-t-full px-5 py-1 hover:bg-[#eaf5fa] transition border-b border-gray-300"
+              onclick="viewPdfInApp('https://example.com/sample.pdf')"
+            >
+              View Html
+            </button>
+            <a
+              href="https://example.com/sample.pdf"
+              download="receipt.pdf"
+              class="text-gray-700 font-semibold text-sm rounded-b-full px-5 py-1 hover:bg-[#eaf5fa] transition text-center"
+              onclick="closePopup(this)"
+            >
+              Print/Save PDF XPs
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Receipt 3 -->
+      <section class="bg-white rounded-md shadow-sm p-4 relative max-w-full mx-auto">
+        <p class="text-gray-500 text-sm mb-1">Receipt Number</p>
+        <p class="font-semibold text-gray-900 mb-3">PU/02-12-24/Online/38097</p>
+
+        <p class="text-gray-500 text-sm mb-1">Site</p>
+        <p class="font-semibold text-gray-900 mb-4">
+          FCE-Faculty of Computer Science and Engineering
+        </p>
+
+        <div class="bg-[#f5f7f8] rounded-md flex text-center text-gray-600 text-sm font-normal">
+          <div class="flex-1 p-3 border-r border-[#d9dfe2]">
+            <p class="font-semibold text-gray-700 text-base">2024-12-02</p>
+            <p>Payment Date</p>
+          </div>
+          <div class="flex-1 p-3 border-r border-[#d9dfe2]">
+            <p class="font-semibold text-gray-700 text-base">Online</p>
+            <p>Payment Mode</p>
+          </div>
+          <div class="flex-1 p-3">
+            <p class="font-semibold text-[#f68b1e] text-base">50.00</p>
+            <p>Amount</p>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="mt-2 text-[#1d6ea7] text-sm font-normal flex items-center gap-1"
+          aria-expanded="false"
+        >
+          More <i class="fas fa-chevron-down text-xs"></i>
+        </button>
+
+        <div class="pt-4 flex justify-end bg-[#EFF5F4] relative">
+          <button
+            type="button"
+            class="text-[#4a6f85] font-semibold text-xs border border-[#a4cbd8] rounded-full px-4 py-2 hover:bg-[#eaf5fa] transition"
+            onclick="togglePopup(this)"
+          >
+            Download
+          </button>
+          <!-- Popup -->
+          <div
+            class="absolute bg-white rounded-md shadow-md p-3 flex flex-col z-20 hidden min-w-[140px]"
+            style="top:1rem; right:-0.25rem;"
+          >
+            <button
+              type="button"
+              class="text-gray-700 font-semibold text-sm rounded-t-full px-5 py-1 hover:bg-[#eaf5fa] transition border-b border-gray-300"
+              onclick="viewPdfInApp('https://example.com/sample.pdf')"
+            >
+              View Html
+            </button>
+            <a
+              href="https://example.com/sample.pdf"
+              download="receipt.pdf"
+              class="text-gray-700 font-semibold text-sm rounded-b-full px-5 py-1 hover:bg-[#eaf5fa] transition text-center"
+              onclick="closePopup(this)"
+            >
+              Print/Save PDF XPs
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- PDF Viewer Page -->
+  <div id="pdfViewerPage" class="hidden fixed inset-0 bg-white flex flex-col">
+    <header class="flex items-center justify-between bg-gradient-to-r from-[#f44336] to-[#f63f4f] px-4 py-3">
+      <button
+        aria-label="Close"
+        class="text-white text-2xl leading-none"
+        onclick="closePdfViewer()"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+      <h1 class="text-white text-lg font-normal text-center flex-grow">PDF Viewer</h1>
+      <div class="flex items-center gap-4">
+        <button aria-label="Search" class="text-white text-xl">
+          <i class="fas fa-search"></i>
+        </button>
+        <button aria-label="More options" class="text-white text-xl">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
+      </div>
+    </header>
+    <iframe
+      id="pdfFrame"
+      src=""
+      class="flex-grow w-full"
+      style="border:none;"
+      title="PDF Viewer"
+    ></iframe>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" class="fixed inset-0 hidden z-10 bg-black bg-opacity-25"></div>
+
+  <!-- Fixed bottom right icon -->
+  <button
+    aria-label="Search"
+    class="fixed bottom-4 right-4 w-14 h-14 bg-[#7fb7e8] rounded-full flex items-center justify-center shadow-lg text-white text-xl z-30"
+  >
+    <i class="fas fa-search"></i>
+  </button>
+
+  <script>
+    function togglePopup(button) {
+      // Close any other open popups
+      document.querySelectorAll('div[aria-hidden="false"]').forEach(popup => {
+        popup.classList.add('hidden');
+        popup.setAttribute('aria-hidden', 'true');
+      });
+      // Find the popup div sibling
+      const popup = button.nextElementSibling;
+      const overlay = document.getElementById('overlay');
+      if (popup) {
+        const isHidden = popup.classList.contains('hidden');
+        if (isHidden) {
+          popup.classList.remove('hidden');
+          popup.setAttribute('aria-hidden', 'false');
+          overlay.classList.remove('hidden');
+        } else {
+          popup.classList.add('hidden');
+          popup.setAttribute('aria-hidden', 'true');
+          overlay.classList.add('hidden');
+        }
+      }
+    }
+    function closePopup(closeBtn) {
+      const popup = closeBtn.parentElement;
+      const overlay = document.getElementById('overlay');
+      if (popup) {
+        popup.classList.add('hidden');
+        popup.setAttribute('aria-hidden', 'true');
+        overlay.classList.add('hidden');
+      }
+    }
+    // Close popup if clicked outside popup or on overlay
+    document.addEventListener('click', function(event) {
+      const popups = document.querySelectorAll('div[aria-hidden="false"]');
+      const overlay = document.getElementById('overlay');
+      popups.forEach(popup => {
+        if (!popup.contains(event.target) && !popup.previousElementSibling.contains(event.target)) {
+          popup.classList.add('hidden');
+          popup.setAttribute('aria-hidden', 'true');
+          overlay.classList.add('hidden');
+        }
+      });
+    });
+    // Also close popup if overlay is clicked
+    document.getElementById('overlay').addEventListener('click', () => {
+      document.querySelectorAll('div[aria-hidden="false"]').forEach(popup => {
+        popup.classList.add('hidden');
+        popup.setAttribute('aria-hidden', 'true');
+      });
+      document.getElementById('overlay').classList.add('hidden');
+    });
+
+    // Open PDF in app browser (new tab replaced with in-app viewer)
+    function viewPdfInApp(url) {
+      document.getElementById('mainPage').classList.add('hidden');
+      document.getElementById('pdfViewerPage').classList.remove('hidden');
+      document.getElementById('pdfFrame').src = url;
+      closeAllPopups();
+    }
+
+    function closePdfViewer() {
+      document.getElementById('pdfViewerPage').classList.add('hidden');
+      document.getElementById('mainPage').classList.remove('hidden');
+      document.getElementById('pdfFrame').src = '';
+    }
+
+    function closeAllPopups() {
+      document.querySelectorAll('div[aria-hidden="false"]').forEach(popup => {
+        popup.classList.add('hidden');
+        popup.setAttribute('aria-hidden', 'true');
+      });
+      document.getElementById('overlay').classList.add('hidden');
+    }
+  </script>
+</body>
 </html>
