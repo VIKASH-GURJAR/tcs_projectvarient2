@@ -5,18 +5,23 @@
   <title>
    Loading Screen
   </title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <style>
    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
    @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+     transform: rotate(0deg);
+    }
+    100% {
+     transform: rotate(360deg);
+    }
    }
    .spinner-path {
-    stroke: #8F9DA6;
+    stroke: #8F9DA6; /* light grey color */
     stroke-linecap: round;
-    stroke-width: 3; /* thinner stroke */
+    stroke-width: 4;
     stroke-dasharray: 289.026;
     stroke-dashoffset: 72;
     transform-origin: 48px 48px;
@@ -32,19 +37,19 @@
   </script>
  </head>
  <body class="bg-gray-50 font-['Roboto'] relative min-h-screen flex flex-col">
-  <!-- Top status bar -->
-  <div class="bg-[#FF3B00] h-7"></div>
-
+  <!-- Top status bar with no icons or text -->
+  <div class="bg-[#FF3B00] h-7">
+  </div>
   <!-- Center loading icon -->
   <div class="flex-grow flex justify-center items-center" style="background-color: #ffffff;">
    <div class="relative w-24 h-24">
       <img alt="Orange and yellow stylized M logo icon in center" class="w-24 h-24 mx-auto" height="96" src="icon.png" width="96">
       <svg class="absolute inset-0 w-24 h-24" fill="none" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
-         <circle cx="48" cy="48" r="46" stroke="#A9BBC5" stroke-width="3"></circle>
+         <circle cx="48" cy="48" r="46" stroke="#A9BBC5" stroke-width="4"></circle>
          <circle class="spinner-path" cx="48" cy="48" r="46" fill="none"></circle>
       </svg>
    </div>
-  </div>
+</div>
 
   <!-- Bottom bar -->
   <div class="bg-gray-900 text-white text-lg px-5 py-3">
