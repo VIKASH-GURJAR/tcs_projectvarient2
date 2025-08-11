@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Loading...</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .spinner {
+      animation: spin 1s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-white relative">
+  <div class="flex items-center justify-center h-screen" id="loader">
+    <div class="w-12 h-12 border-4 border-gray-700 rounded-full border-t-gray-400 spinner"></div>
+  </div>
+
+
+  
+
+  <script>
+    // Show spinner for 7 seconds, then load another HTML file
+    setTimeout(() => {
+      window.location.href = "feeslip.html"; // Change to your HTML file
+    }, 7000);
+  </script>
+</body>
+</html>
