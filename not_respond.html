@@ -1,0 +1,137 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Webpage not available
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+   @keyframes spin {
+    to {
+     transform: rotate(360deg);
+    }
+   }
+   .spinner {
+    animation: spin 1s linear infinite;
+   }
+   /* Dark mode Android app crash popup style with minimal buttons */
+   #popup {
+    background-color: rgba(0, 0, 0, 0.7);
+   }
+   #popupContent {
+    background-color: #121212;
+    width: 280px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 0.7);
+    font-family: Roboto, Arial, sans-serif;
+    text-align: center;
+    padding: 20px 16px;
+    color: #e0e0e0;
+   }
+   #popupTitle {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+   }
+   .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+   }
+   .buttons button {
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 0;
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 220px;
+    box-shadow: none;
+    background: transparent;
+    color: #e0e0e0;
+    transition: background-color 0.2s ease;
+   }
+   #closeAppBtn:hover,
+   #waitBtn:hover {
+    background-color: rgba(224, 224, 224, 0.1);
+   }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"/>
+ </head>
+ <body class="bg-white relative">
+  <div class="flex items-center justify-center h-screen" id="loader">
+   <div class="w-12 h-12 border-4 border-gray-700 rounded-full border-t-gray-400 spinner"></div>
+  </div>
+  <div class="hidden px-4 pt-4" id="content">
+   <img alt="Green Android robot icon" class="mb-2" height="52" src="android.jpg" width="52"/>
+   <h1 class="text-2xl font-semibold text-black mb-2">
+    Webpage not available
+   </h1>
+   <p class="text-base text-black mb-2">
+    The webpage at
+    <strong>
+     https://g21.tcsion.com/mION/?    </strong>
+    could not be loaded because:
+   </p>
+   <p class="text-base text-black">
+    net::ERR_CONNECTION_RESET
+   </p>
+  </div>
+
+  <!-- Dark mode Android app crash Popup Modal with minimal buttons -->
+  <div id="popup" class="hidden fixed inset-0 flex items-center justify-center z-50">
+   <div id="popupContent" role="alertdialog" aria-modal="true" aria-labelledby="popupTitle" aria-describedby="popupDesc" style="">
+    <p id="popupTitle" style="">
+     System UI isn't responding
+    </p>
+    <div class="buttons" role="group" aria-label="System UI crash options" style="">
+     <button id="closeAppBtn" type="button" aria-label="Close app button">
+      Close app
+     </button>
+     <button id="waitBtn" type="button" aria-label="Wait button">
+      Wait
+     </button>
+    </div>
+   </div>
+  </div>
+
+  <script>
+   setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+    document.getElementById('content').classList.remove('hidden');
+
+    // Show popup after 2 seconds
+    setTimeout(() => {
+     document.getElementById('popup').classList.remove('hidden');
+    }, 2000);
+   }, 7000);
+
+   // Button handlers
+   document.getElementById('closeAppBtn').addEventListener('click', () => {
+    // Try to close or minimize the app if embedded in Android WebView
+    if (window.AndroidInterface && typeof window.AndroidInterface.closeApp === 'function') {
+     window.AndroidInterface.closeApp();
+    } else if (navigator.app && typeof navigator.app.exitApp === 'function') {
+     navigator.app.exitApp();
+    } else if (window.close) {
+     window.close();
+    } else {
+     // Fallback: minimize by navigating to home or blank page
+     window.location.href = 'about:blank';
+    }
+   });
+
+   document.getElementById('waitBtn').addEventListener('click', () => {
+    // Hide popup and show it again after 2 seconds
+    document.getElementById('popup').classList.add('hidden');
+    setTimeout(() => {
+     document.getElementById('popup').classList.remove('hidden');
+    }, 2000);
+   });
+  </script>
+ </body>
+</html>
