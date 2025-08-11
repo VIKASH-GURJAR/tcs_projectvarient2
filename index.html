@@ -6,7 +6,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     setTimeout(() => {
-      window.location.href = "loading.html"; // Redirect to loading page after 4 seconds
+      window.location.href = "loading.html"; // Redirect to loading page after 6 seconds
     }, 6000);
   </script>
 </head>
@@ -14,28 +14,28 @@
   <!-- Navbar -->
   <nav class="bg-[#ffffff] w-full h-8"></nav>
 
-  <!-- Main content -->
-  <main class="flex-grow flex flex-col justify-center items-center space-y-10 py-20">
+  <!-- Main content centered -->
+  <main class="flex-grow flex flex-col justify-center items-center">
     <img
       alt="Logo with orange and yellow overlapping shapes forming an M"
-      class="w-40 h-40"
+      class="w-40 h-40 mb-6"
       height="185"
       src="icon_bg.png"
       width="190"
     />
-    <h1 class="text-black text-xl font-bold">TCS iON mTOP</h1>
-  </main>
-
-  <!-- Footer -->
-  <footer class="flex flex-col items-center space-y-2 mb-10">
-    <p class="text-gray-600 text-sm">Powered by</p>
+    <h1 class="text-black text-xl font-bold mb-10">TCS iON mTOP</h1>
     <img
       alt="TCS iON logo in black"
-      class="w-30 h-10"
+      class="w-28 h-10 mt-4"
       height="40"
       src="tcsiQN.png"
       width="120"
     />
+  </main>
+
+  <!-- Footer (optional, can be removed if not needed) -->
+  <footer class="flex flex-col items-center space-y-2 mb-6">
+    <p class="text-gray-600 text-sm">Powered by</p>
   </footer>
 </body>
 </html>
