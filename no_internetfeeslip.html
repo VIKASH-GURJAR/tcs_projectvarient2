@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Webpage not available</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .spinner {
+      animation: spin 1s linear infinite;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-white relative">
+  <div class="flex items-center justify-center h-screen" id="loader">
+    <div class="w-12 h-12 border-4 border-gray-700 rounded-full border-t-gray-400 spinner"></div>
+  </div>
+
+  <div class="hidden px-4 pt-4" id="content">
+    <img alt="Green Android robot icon" class="mb-2" height="52" src="android.jpg" width="52"/>
+    <h1 class="text-2xl font-semibold text-black mb-2">Webpage not available</h1>
+    <p class="text-base text-black mb-2">
+      The webpage at
+      <strong>https://g21.tcsion.com/mION/?</strong>
+      could not be loaded because:
+    </p>
+    <p class="text-base text-black">net::ERR_CONNECTION_RESET</p>
+  </div>
+
+  <script>
+    // Detect refresh (same session)
+    if (sessionStorage.getItem("pageLoaded")) {
+      // Redirect to another HTML on refresh
+      window.location.href = "feeslip.html"; // Change to your file
+    } else {
+      sessionStorage.setItem("pageLoaded", "true");
+    }
+
+    // Loader delay
+    setTimeout(() => {
+      document.getElementById('loader').classList.add('hidden');
+      document.getElementById('content').classList.remove('hidden');
+    }, 7000);
+  </script>
+</body>
+</html>
