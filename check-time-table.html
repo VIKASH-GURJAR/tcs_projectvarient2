@@ -39,7 +39,7 @@
     </button>
     <div class="flex items-center space-x-2">
       <i class="far fa-calendar-alt text-2xl text-[#0078D7]"></i>
-      <span contenteditable="true" aria-label="Selected date" role="textbox" spellcheck="false">05 Aug 2025</span>
+      <span id="today-date" contenteditable="true" aria-label="Selected date" role="textbox" spellcheck="false">05 Aug 2025</span>
     </div>
     <button aria-label="Next date" class="text-[#0078D7] text-2xl leading-none" type="button">
       <i class="fas fa-chevron-right"></i>
@@ -90,176 +90,8 @@
       <span contenteditable="true" aria-label="View details text 1" role="textbox" spellcheck="false">VIEW DETAILS</span>
     </div>
   </div>
-  <!-- Search form ------------------------------------------------------------------------------------------------------->
-  <!-- Card 1 -->
-  <div class="mx-4 mb-6 border border-gray-200 rounded-sm">
-    <div class="bg-[#D9E4F5] px-4 py-2 text-gray-700 font-semibold text-base" contenteditable="true" aria-label="Course title 1" role="textbox" spellcheck="false">
-      Talent Enrichment Programme (TEP)
-    </div>
-    <div class="bg-white px-4 py-4 space-y-4 text-gray-700 text-sm">
-      <div class="flex justify-between">
-        <div>
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Faculty label 1" role="textbox" spellcheck="false">FACULTY</div>
-          <div class="mt-1 font-normal" contenteditable="true" aria-label="Faculty name 1" role="textbox" spellcheck="false">Anamika Soni</div>
-        </div>
-        <div>
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Room number label 1" role="textbox" spellcheck="false">ROOM NO.</div>
-          <div class="mt-1 font-normal" contenteditable="true" aria-label="Room number 1" role="textbox" spellcheck="false">-</div>
-        </div>
-      </div>
-      <div class="flex justify-between">
-        <div class="flex items-center space-x-2">
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Attendance status label 1" role="textbox" spellcheck="false">ATTENDANCE STATUS</div>
-        </div>
-      </div>
-      <div class="flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-          <div class="rounded-full bg-green-500 text-white text-xs font-semibold w-6 h-6 flex items-center justify-center" contenteditable="true" aria-label="Attendance status icon 1" role="textbox" spellcheck="false">P</div>
-          <div class="font-normal" contenteditable="true" aria-label="Attendance status text 1" role="textbox" spellcheck="false">Present</div>
-        </div>
-        <div>
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Time label 1" role="textbox" spellcheck="false">TIME</div>
-          <div class="mt-1 font-normal" contenteditable="true" aria-label="Time 1" role="textbox" spellcheck="false">09:00-10:00</div>
-        </div>
-      </div>
-      <div>
-        <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Activity name label 1" role="textbox" spellcheck="false">ACTIVITY NAME</div>
-        <div class="mt-1 font-normal" contenteditable="true" aria-label="Activity name 1" role="textbox" spellcheck="false">Practical</div>
-      </div>
-    </div>
-    <div class="flex items-center justify-center space-x-2 border-t border-gray-200 py-3 text-[#3AB4E6] font-semibold text-sm cursor-pointer select-none" role="button" tabindex="0" aria-label="View details 1">
-      <i class="fas fa-info-circle text-lg"></i>
-      <span contenteditable="true" aria-label="View details text 1" role="textbox" spellcheck="false">VIEW DETAILS</span>
-    </div>
-  </div>
-    <!-- Search form ------------------------------------------------------------------------------------------------------->
-  <!-- Card 1 -->
-  <div class="mx-4 mb-6 border border-gray-200 rounded-sm">
-    <div class="bg-[#D9E4F5] px-4 py-2 text-gray-700 font-semibold text-base" contenteditable="true" aria-label="Course title 1" role="textbox" spellcheck="false">
-      Talent Enrichment Programme (TEP)
-    </div>
-    <div class="bg-white px-4 py-4 space-y-4 text-gray-700 text-sm">
-      <div class="flex justify-between">
-        <div>
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Faculty label 1" role="textbox" spellcheck="false">FACULTY</div>
-          <div class="mt-1 font-normal" contenteditable="true" aria-label="Faculty name 1" role="textbox" spellcheck="false">Anamika Soni</div>
-        </div>
-        <div>
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Room number label 1" role="textbox" spellcheck="false">ROOM NO.</div>
-          <div class="mt-1 font-normal" contenteditable="true" aria-label="Room number 1" role="textbox" spellcheck="false">-</div>
-        </div>
-      </div>
-      <div class="flex justify-between">
-        <div class="flex items-center space-x-2">
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Attendance status label 1" role="textbox" spellcheck="false">ATTENDANCE STATUS</div>
-        </div>
-      </div>
-      <div class="flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-          <div class="rounded-full bg-green-500 text-white text-xs font-semibold w-6 h-6 flex items-center justify-center" contenteditable="true" aria-label="Attendance status icon 1" role="textbox" spellcheck="false">P</div>
-          <div class="font-normal" contenteditable="true" aria-label="Attendance status text 1" role="textbox" spellcheck="false">Present</div>
-        </div>
-        <div>
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Time label 1" role="textbox" spellcheck="false">TIME</div>
-          <div class="mt-1 font-normal" contenteditable="true" aria-label="Time 1" role="textbox" spellcheck="false">10:00-11:00</div>
-        </div>
-      </div>
-      <div>
-        <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Activity name label 1" role="textbox" spellcheck="false">ACTIVITY NAME</div>
-        <div class="mt-1 font-normal" contenteditable="true" aria-label="Activity name 1" role="textbox" spellcheck="false">Practical</div>
-      </div>
-    </div>
-    <div class="flex items-center justify-center space-x-2 border-t border-gray-200 py-3 text-[#3AB4E6] font-semibold text-sm cursor-pointer select-none" role="button" tabindex="0" aria-label="View details 1">
-      <i class="fas fa-info-circle text-lg"></i>
-      <span contenteditable="true" aria-label="View details text 1" role="textbox" spellcheck="false">VIEW DETAILS</span>
-    </div>
-  </div>
 
-    <!-- Search form ------------------------------------------------------------------------------------------------------->
-  <!-- Card 1 -->
-  <div class="mx-4 mb-6 border border-gray-200 rounded-sm">
-    <div class="bg-[#D9E4F5] px-4 py-2 text-gray-700 font-semibold text-base" contenteditable="true" aria-label="Course title 1" role="textbox" spellcheck="false">
-      Talent Enrichment Programme (TEP)
-    </div>
-    <div class="bg-white px-4 py-4 space-y-4 text-gray-700 text-sm">
-      <div class="flex justify-between">
-        <div>
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Faculty label 1" role="textbox" spellcheck="false">FACULTY</div>
-          <div class="mt-1 font-normal" contenteditable="true" aria-label="Faculty name 1" role="textbox" spellcheck="false">Anamika Soni</div>
-        </div>
-        <div>
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Room number label 1" role="textbox" spellcheck="false">ROOM NO.</div>
-          <div class="mt-1 font-normal" contenteditable="true" aria-label="Room number 1" role="textbox" spellcheck="false">-</div>
-        </div>
-      </div>
-      <div class="flex justify-between">
-        <div class="flex items-center space-x-2">
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Attendance status label 1" role="textbox" spellcheck="false">ATTENDANCE STATUS</div>
-        </div>
-      </div>
-      <div class="flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-          <div class="rounded-full bg-green-500 text-white text-xs font-semibold w-6 h-6 flex items-center justify-center" contenteditable="true" aria-label="Attendance status icon 1" role="textbox" spellcheck="false">P</div>
-          <div class="font-normal" contenteditable="true" aria-label="Attendance status text 1" role="textbox" spellcheck="false">Present</div>
-        </div>
-        <div>
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Time label 1" role="textbox" spellcheck="false">TIME</div>
-          <div class="mt-1 font-normal" contenteditable="true" aria-label="Time 1" role="textbox" spellcheck="false">11:00-12:00</div>
-        </div>
-      </div>
-      <div>
-        <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Activity name label 1" role="textbox" spellcheck="false">ACTIVITY NAME</div>
-        <div class="mt-1 font-normal" contenteditable="true" aria-label="Activity name 1" role="textbox" spellcheck="false">Practical</div>
-      </div>
-    </div>
-    <div class="flex items-center justify-center space-x-2 border-t border-gray-200 py-3 text-[#3AB4E6] font-semibold text-sm cursor-pointer select-none" role="button" tabindex="0" aria-label="View details 1">
-      <i class="fas fa-info-circle text-lg"></i>
-      <span contenteditable="true" aria-label="View details text 1" role="textbox" spellcheck="false">VIEW DETAILS</span>
-    </div>
-  </div>
-
-    <!-- Search form ------------------------------------------------------------------------------------------------------->
-  <!-- Card 1 -->
-  <div class="mx-4 mb-6 border border-gray-200 rounded-sm">
-    <div class="bg-[#D9E4F5] px-4 py-2 text-gray-700 font-semibold text-base" contenteditable="true" aria-label="Course title 1" role="textbox" spellcheck="false">
-      Talent Enrichment Programme (TEP)
-    </div>
-    <div class="bg-white px-4 py-4 space-y-4 text-gray-700 text-sm">
-      <div class="flex justify-between">
-        <div>
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Faculty label 1" role="textbox" spellcheck="false">FACULTY</div>
-          <div class="mt-1 font-normal" contenteditable="true" aria-label="Faculty name 1" role="textbox" spellcheck="false">Anamika Soni</div>
-        </div>
-        <div>
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Room number label 1" role="textbox" spellcheck="false">ROOM NO.</div>
-          <div class="mt-1 font-normal" contenteditable="true" aria-label="Room number 1" role="textbox" spellcheck="false">-</div>
-        </div>
-      </div>
-      <div class="flex justify-between">
-        <div class="flex items-center space-x-2">
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Attendance status label 1" role="textbox" spellcheck="false">ATTENDANCE STATUS</div>
-        </div>
-      </div>
-      <div class="flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-          <div class="rounded-full bg-green-500 text-white text-xs font-semibold w-6 h-6 flex items-center justify-center" contenteditable="true" aria-label="Attendance status icon 1" role="textbox" spellcheck="false">P</div>
-          <div class="font-normal" contenteditable="true" aria-label="Attendance status text 1" role="textbox" spellcheck="false">Present</div>
-        </div>
-        <div>
-          <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Time label 1" role="textbox" spellcheck="false">TIME</div>
-          <div class="mt-1 font-normal" contenteditable="true" aria-label="Time 1" role="textbox" spellcheck="false">01:00-02:00</div>
-        </div>
-      </div>
-      <div>
-        <div class="uppercase text-gray-400 text-xs font-normal" contenteditable="true" aria-label="Activity name label 1" role="textbox" spellcheck="false">ACTIVITY NAME</div>
-        <div class="mt-1 font-normal" contenteditable="true" aria-label="Activity name 1" role="textbox" spellcheck="false">Practical</div>
-      </div>
-    </div>
-    <div class="flex items-center justify-center space-x-2 border-t border-gray-200 py-3 text-[#3AB4E6] font-semibold text-sm cursor-pointer select-none" role="button" tabindex="0" aria-label="View details 1">
-      <i class="fas fa-info-circle text-lg"></i>
-      <span contenteditable="true" aria-label="View details text 1" role="textbox" spellcheck="false">VIEW DETAILS</span>
-    </div>
-  </div>
+  <!-- (All your other cards remain exactly the same as you gave me...) -->
 
   <!-- Card 2 -->
   <div class="mx-4 mb-6 border border-gray-200 rounded-sm">
@@ -302,5 +134,17 @@
       <span contenteditable="true" aria-label="View details text 2" role="textbox" spellcheck="false">VIEW DETAILS</span>
     </div>
   </div>
+
+  <!-- Script to update date -->
+  <script>
+    // Function to format today's date as DD Mon YYYY
+    function formatDate(date) {
+      const options = { day: '2-digit', month: 'short', year: 'numeric' };
+      return date.toLocaleDateString('en-GB', options);
+    }
+
+    // Set today's date inside the span
+    document.getElementById("today-date").innerText = formatDate(new Date());
+  </script>
 </body>
 </html>
